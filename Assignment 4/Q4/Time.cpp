@@ -94,7 +94,9 @@ public:
             this->hours--;
             return *this;
         }
-        cout << "During operation :" << "Hours: " << this->hours << " Minutes:" << ++this->minutes<<endl;
+        cout << "Before operation :" << "Hours: " << this->hours << " Minutes:" << this->minutes<<endl;
+    
+        cout << "During operation :" << "Hours: " << this->hours << " Minutes:" << --this->minutes<<endl;
         return *this;
     }
     Time operator-(Time &obj2)
@@ -117,45 +119,3 @@ public:
     }
 };
 
-int main()
-{
-
-    Time t1(4, 130);
-    Time t2(t1);
-
-    t1.display();
-    cout << endl;
-    t2.display();
-    cout << endl;
-
-    cout << endl;
-    Time t3 = t1 + t2;
-
-    t3.display();
-    cout << endl;
-    Time t4(1, 45);
-    Time t5(2, 5);
-    Time t6 = t4 - t5;
-    t6.display();
-    cout << endl;
-
-    t4 = t5 = t6;
-    t4.display();
-    cout << endl;
-
-    Time t7(1, 59); // real clock short explanation
-    t7++;
-    // for (int i = 0; i <=60; i++)
-    // {
-    //     t7++;
-    //     t7.display();
-    //     cout<<endl;
-    // }
-    --t7;
-    t7.display();
-    cout << endl;
-
-    t7--;
-    t7.display();
-    cout << endl;
-}
