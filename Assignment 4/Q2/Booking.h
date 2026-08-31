@@ -127,7 +127,21 @@ friend istream& operator >>(istream &ob1,Booking &ob2);
         }
         if(type==2)
         {
-            fare = distance * two_rate;
+            fare = dis2. Calculate Travel Fare
+
+Create a Booking class to store bookingid, source, destination, distance,fare
+Add all required functions(copy constructor parametrised constructor with default values, setter, getter methods)
+And overload calculateFare().
+Overload << and >> operator to accept and display Booking class object
+
+The function should calculate the fare in different ways:
+
+Calculate fare based only on the distance travelled.
+Calculate fare based on distance and vehicle type.
+Calculate fare based on distance, vehicle type, and number of passengers.
+Calculate fare for a premium booking with additional service charges.
+
+Task: Use function overloading to provide different versions of calculateFare().tance * two_rate;
         }
         else if(type==3)
         {
