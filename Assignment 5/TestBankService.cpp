@@ -13,6 +13,7 @@ int main()
         cout << "\n--- Menu ---" << endl
              << "1. Add account" << endl
              << "2. Display Account" << endl
+             << "4. Display All" << endl
              << "3. Close Account" << endl
              << "4. Account Counts" << endl
              << "5. Withdraw" << endl
@@ -33,6 +34,9 @@ int main()
             break;
         case 3:
             bs.addAccount();
+            break;
+        case 4:
+            bs.display();
             break;
         case 8:
             cout << "Exiting application..." << endl;

@@ -39,7 +39,7 @@ void BankingService::addAccount()
     char *lname = nullptr;
     char *mobile = nullptr;
     char *email = nullptr;
-    int pin; 
+    int pin;
 
     string Fname, Lname, Mobile, Email;
 
@@ -50,10 +50,10 @@ void BankingService::addAccount()
         cin >> trans;
         cout << "Enter id: ";
         cin >> id;
-        
+
         cout << "Enter first name: ";
         cin >> Fname;
-        
+
         fname = new char[Fname.length() + 1];
         strcpy(fname, Fname.c_str());
 
@@ -75,6 +75,8 @@ void BankingService::addAccount()
         cout << "Enter pin: ";
         cin >> pin;
 
+
+        
         accounts[accountCount] = new Current(trans, fname, id, lname, mobile, email, pin);
         accountCount++;
 
@@ -84,14 +86,15 @@ void BankingService::addAccount()
         delete[] email;
 
         cout << "Account added successfully" << endl;
-    }else if (type==2)
+    }
+    else if (type == 2)
     {
         cout << "Enter id: ";
         cin >> id;
-        
+
         cout << "Enter first name: ";
         cin >> Fname;
-        
+
         fname = new char[Fname.length() + 1];
         strcpy(fname, Fname.c_str());
 
@@ -113,8 +116,8 @@ void BankingService::addAccount()
         cout << "Enter pin: ";
         cin >> pin;
 
-        Demat *demat = new Demat(id,fname, lname, email, mobile,pin);
-        accounts[accountCount++] = demat;        
+        Demat *demat = new Demat(id, fname, lname, email, mobile, pin);
+        accounts[accountCount++] = demat;
         addShareToDemat(demat);
 
         delete[] fname;
@@ -122,7 +125,43 @@ void BankingService::addAccount()
         delete[] mobile;
         delete[] email;
     }
-    
+    else if (type == 3)
+    {
+
+        cout << "Enter id: ";
+        cin >> id;
+
+        cout << "Enter first name: ";
+        cin >> Fname;
+
+        fname = new char[Fname.length() + 1];
+        strcpy(fname, Fname.c_str());
+
+        cout << "Enter last name: ";
+        cin >> Lname;
+        lname = new char[Lname.length() + 1];
+        strcpy(lname, Lname.c_str());
+
+        cout << "Enter mobile: ";
+        cin >> Mobile;
+        mobile = new char[Mobile.length() + 1];
+        strcpy(mobile, Mobile.c_str());
+
+        cout << "Enter email: ";
+        cin >> Email;
+        email = new char[Email.length() + 1];
+        strcpy(email, Email.c_str());
+
+        cout << "Enter pin: ";
+        cin >> pin;
+
+        accounts[accountCount++] = new Saving(id, fname, id, lname, mobile, email, pin);
+
+        delete[] fname;
+        delete[] lname;
+        delete[] mobile;
+        delete[] email;
+    }
 }
 void BankingService::display()
 {
@@ -148,7 +187,7 @@ int BankingService::findAccount()
 }
 void BankingService::displayAccount()
 {
-    int id; 
+    int id;
     cout << "Enter account ID to display: ";
     cin >> id;
     int index = findAccount();
@@ -162,12 +201,12 @@ void BankingService::displayAccount()
     }
 }
 
-
-void BankingService::addShareToDemat(Account *a){
-    Demat *demat =dynamic_cast<Demat *>(a);
+void BankingService::addShareToDemat(Account *a)
+{
+    Demat *demat = dynamic_cast<Demat *>(a);
     int count;
-    cout<<"Enter no of Shares :";
-    cin>>count;
+    cout << "Enter no of Shares :";
+    cin >> count;
 
     for (int i = 0; i < count; i++)
     {
@@ -192,5 +231,4 @@ void BankingService::addShareToDemat(Account *a){
         Share s(const_cast<char *>(name.c_str()), qty, buyPrice, const_cast<char *>(pDate.c_str()), sellPrice, const_cast<char *>(sDate.c_str()));
         demat->addShare(s);
     }
-    
 }
