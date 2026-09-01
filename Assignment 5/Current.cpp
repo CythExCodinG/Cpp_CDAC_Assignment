@@ -39,7 +39,7 @@ void Current::withdraw(int pin, double amount, int id) {
             this->balance -= amount;
             cout << "Withdrawal successful! Remaining Balance: " << this->balance << endl;
         } else {
-            cout << "Insufficient balance. Minimum balance requirement (1000) not met." << endl;
+            cout << "Insufficient balance. Minimum balance requirement (" << this->minBalance << ") not met." << endl;
         }
     } else {
         cout << "Invalid PIN!" << endl;

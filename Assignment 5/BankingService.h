@@ -20,7 +20,7 @@ public:
     void withdrawAccount();
     void depositAccount();
     void changePin();
-    void addShareToDemat();
+    void addShareToDemat(Account *a);
     int findAccount();
 };
 

@@ -31,6 +31,9 @@ int main()
         case 2:
             bs.displayAccount();
             break;
+        case 3:
+            bs.addAccount();
+            break;
         case 8:
             cout << "Exiting application..." << endl;
             break;

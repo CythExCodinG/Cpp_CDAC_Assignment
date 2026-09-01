@@ -9,7 +9,7 @@ class Saving:public Account{
            interest=0.4; 
            minBalance=20000;
         };
-        Saving(int checkBookNo);
+        Saving(int no, char *fname, int id, char *lname, char *mobile, char *email, int pin);
 
         void setCheckBookNo(int no);
 
