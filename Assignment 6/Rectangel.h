@@ -1,6 +1,6 @@
 #include "Shape.h"
-#ifndef Rectangel_H;
-#define Rectangel_H;
+#ifndef Rectangel_H
+#define Rectangel_H
 class Rectangle:public Shape{
 
     private:

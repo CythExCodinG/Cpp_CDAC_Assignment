@@ -1,5 +1,5 @@
-#ifndef Shape_H;
-#define Shape_H;
+#ifndef Shape_H
+#define Shape_H
 
 class Shape{
     private:

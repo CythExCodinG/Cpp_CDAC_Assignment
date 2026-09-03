@@ -1,20 +1,37 @@
 #include "Person.h"
+#include <cstring>
+#include <iostream>
 
-#include<cstring>
+int Person::count=0;
 
-int Person::id=0;
 Person::Person(){
-    this->name=nullptr;
+    this->name = nullptr;
+    this->id = ++count;
 }
 
 Person::Person(const char* name, const char* street, const char* city, const char* state, int pin) : addr(street,city,state,pin){
-
     this->name = new char[strlen(name)+1];
     strcpy(this->name , name);
-
-    id++;
+    this->id = ++count;
 }
+
+Person::~Person() {
+    delete[] name;
+}
+
 void Person::display() const {
-    std::cout << "Name: " << (name ? name : "N/A") << std::endl;
-    // You can also call an addr.display() here if Address has one
+    std::cout << "ID: " << id << " | Name: " << (name ? name : "N/A") << "\nAddress: ";
+    addr.display();
+}
+
+int Person::getId() const {
+    return id;
+}
+
+const char* Person::getName() const {
+    return name;
+}
+
+Address& Person::getAddress() {
+    return addr;
 }

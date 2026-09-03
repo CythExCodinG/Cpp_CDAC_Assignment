@@ -1,11 +1,17 @@
 #include "Vehicle.h"
 
-int Vehicle :: count=0;
+int Vehicle::count = 0;
 
-Vehicle::Vehicle(int hours){
-  this->hours = hours;
+Vehicle::Vehicle(int h) {
+    hours = h;
+    extraChargeAmount = 0.0f;
+    totalCharge = 0.0f;
 }
 
-int Vehicle::extra_parking_charge(){
-    return e_park_charge = e_hrs * e_park_charge;
+int Vehicle::getCount() {
+    return count;
+}
+
+void Vehicle::incrementCount() {
+    count++;
 }

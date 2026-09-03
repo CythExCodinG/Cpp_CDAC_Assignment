@@ -8,8 +8,14 @@ class Address{
     int pin;
 
     public:
-
     Address();
+    Address(const char* street, const char* city, const char* state, int pin);
+    Address(const Address& other);
+    Address& operator=(const Address& other);
+    ~Address();
 
-Address(const char* street, const char* city, const char* state, int pin);};
+    void display() const;
+    const char* getCity() const;
+    void modifyAddress(const char* street, const char* city, const char* state, int pin);
+};
 #endif
