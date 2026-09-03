@@ -1,7 +1,12 @@
 #include "Address.h"
 #include <cstring>
-
-Address::Address(char* street , char* city , char* state , int pin) {
+Address::Address() {
+    street = nullptr;
+    city = nullptr;
+    state = nullptr;
+    pin = 0;
+}
+Address::Address(const char* street, const char* city, const char* state, int pin) {
 
     this->street = new char[strlen(street)+1];
     strcpy(this->street , street);
@@ -10,7 +15,7 @@ Address::Address(char* street , char* city , char* state , int pin) {
     strcpy(this->city , city);
 
     this->state = new char[strlen(state)+1];
-    strcpy(this->street , state);
+    strcpy(this->state , state);
 
     this->pin = pin;
 

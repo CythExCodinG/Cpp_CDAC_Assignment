@@ -14,8 +14,8 @@ class Person{
 
     public:
     Person();
-    Person(char* name , char* street , char* city , char* state , int pin);
-
+Person(const char* name, const char* street, const char* city, const char* state, int pin);
+    void display() const ;
 };
 
 #endif

@@ -3,9 +3,8 @@
 #include<iostream>
 using namespace std;
 
-void AddNewPerson(int &count){
-   
-    Person p("Sanket" , "vinay nagar" , "nashik" , "Maharashtra" , 462001);
+Person *AddNewPerson(int &count){
+   return new Person("Sanket" , "vinay nagar" , "nashik" , "Maharashtra" , 462001);
 }
 
 int main(){
@@ -13,7 +12,10 @@ int main(){
     Person* arr[50];
     int count = 0;
 
-    AddNewPerson(count);
+    arr[count++]=AddNewPerson(count);
+
+    arr[0]->display();
+
     return 0;
 }
 
